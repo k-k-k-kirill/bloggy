@@ -1,10 +1,6 @@
 <template>
     <article v-if="loading === false">
-        <header>
-            <nav class="navbar navbar-light bg-light">
-                <router-link class="h3 navbar-brand" to="/">Bloggy</router-link>
-            </nav>
-        </header>
+        <Header />
         <main>
             <div class="container">
                 <slot></slot>
@@ -16,11 +12,13 @@
 
 <script>
     import LoadingScreen from '../views/LoadingScreen.vue'
+    import Header from '../components/Header'
 
     export default {
         name: 'Layout',
         components: {
-            LoadingScreen
+            LoadingScreen,
+            Header
         },
         computed: {
             loading() {
